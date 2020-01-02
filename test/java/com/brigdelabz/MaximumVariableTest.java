@@ -66,4 +66,11 @@ public class MaximumVariableTest {
         String thirdString=maximumVariable.maximumVariable("Apple","Banana","Peach");
         Assert.assertEquals("Peach",thirdString);
     }
+
+    @Test
+    public void whenCallTestMethod_shouldPassTest() {
+        MaximumVariable maximumVariable = new MaximumVariable(23,21,20);
+        int firstInteger= (int) maximumVariable.testMaximum();
+        Assert.assertEquals(23,firstInteger);
+    }
 }
