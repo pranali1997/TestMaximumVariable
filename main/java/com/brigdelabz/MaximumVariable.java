@@ -1,5 +1,7 @@
 package com.brigdelabz;
 
+import java.util.Arrays;
+
 public class MaximumVariable <E extends Comparable> {
 
     E x,y,z;
@@ -18,20 +20,11 @@ public class MaximumVariable <E extends Comparable> {
         return maximumVar;
     }
 
-    public static <E extends Comparable> E maximumVariable(E x, E y, E z){
-        E maxValue;
-        if (x.compareTo(y)>0){
-            maxValue=x;
-        }
-        else {
-            maxValue=y;
-        }
-        if (maxValue.compareTo(z)<0)
-        {
-            maxValue=z;
-        }
+    public static <E extends Comparable> E maximumVariable(E... val){
+        E[] values =val;
+        Arrays.sort(values);
 
-        return maxValue;
+        return values[2];
     }
 
 }
