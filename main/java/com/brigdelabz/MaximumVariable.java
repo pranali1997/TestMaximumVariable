@@ -18,5 +18,20 @@ public class MaximumVariable {
     }
 
 
+    public Float maximumFloat(Float x, Float y, Float z) {
+        Float maxValue;
+        if (x.compareTo(y)>0){
+            maxValue=x;
+        }
+        else {
+            maxValue=y;
+        }
+        if (maxValue.compareTo(z)<0)
+        {
+            maxValue=z;
+        }
 
+        return maxValue;
+
+    }
 }
