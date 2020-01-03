@@ -4,32 +4,30 @@ import java.util.Arrays;
 
 public class MaximumVariable <E extends Comparable> {
 
-    E x,y,z;
-    public MaximumVariable(E x,E y,E z) {
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    E[] array;
+    public MaximumVariable(E... array) {
+        this.array = array;
     }
-
     public MaximumVariable() {
 
     }
 
     public E testMaximum() {
-        E maximumVar = maximumVariable(x,y,z);
-        printMax((Integer) maximumVar);
+        E maximumVar = testMaximum(array);
         return maximumVar;
     }
 
-    public void printMax(Integer maximumVar)
-    {
+    public static <E extends Comparable> void printMax(E maximumVar) {
+
         System.out.println("Value of  "+maximumVar);
     }
-    public static <E extends Comparable> E maximumVariable(E... val){
+
+
+    public static <E extends Comparable> E testMaximum(E... val){
         E[] values =val;
         int length=values.length;
         Arrays.sort(values);
-
+        printMax(values[length-1]);
         return values[length-1];
     }
 
